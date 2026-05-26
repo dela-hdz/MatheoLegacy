@@ -1,0 +1,252 @@
+/* Base font import (if needed) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+
+:root {
+    --color-red: #C21807;
+    --color-blue: #097BD2;
+    --color-green: #308C0E;     /* TODO: this color vs #008e26 */
+    --color-purple: #6A0DAD;
+    /* TODO: find a good orange color */
+    --color-grayLight: #D9D9D9;
+    --color-grayDark: #515151;  /* TODO: find a best dark gray */
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Body and text desing */
+    --base-color: white;
+    --text-color: black;
+
+    /* about buttons */
+    --toggle-color-base: var(--color-grayLight);
+    --toggle-text-color-off: black;
+    --toggle-text-color-on: white;
+
+    /* shadows */
+    --box-shadow: rgba(0, 0, 0, 0.2);
+
+
+    /* text fonts for easy building */
+    --font-primary: 'Open Sans', sans-serif;
+
+    /* Font sizes */
+    --fs-h1: 20px;
+    --fs-h2: 18px;
+    --fs-body: 16px;
+
+    /* Font weights */
+    --fw-bold: 700;
+    --fw-semibold: 600;
+    --fw-regular: 400;
+
+    /* Line heights */
+    --lh-heading: 1.3;
+    --lh-body: 1.5;
+}
+.darkmode {
+    --base-color: black;
+    --text-color: white;
+
+    --toggle-color-base: var(--color-grayDark);
+    --toggle-text-color-off: white;
+    --toggle-text-color-on: white;
+
+    /* shadows */
+    --box-shadow: rgba(205, 205, 205, 0.644);
+}
+
+/* REMINDER: how to use this? */
+/* 
+{
+  font-family: var(--font-primary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #ffffff; */
+    background: var(--base-color);
+    color: var(--text-color);
+}
+
+
+
+/* BANNER ZONE */
+.banner {
+    background-color: var(--color-red);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+.banner div {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.banner-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.2s ease;
+
+    text-decoration: none;
+
+    /* text settings */
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-heading);
+    color: var(--color-white);
+}
+.banner-btn img {
+    display: block;
+}
+
+/* HOVER */
+.banner-btn:hover {
+    transform: scale(1.1);
+}
+/* BANNER ZONE END */
+.banner-box {
+    margin-top: 2px;
+    min-height: 12px;
+    background-color: var(--color-red);
+}
+
+
+
+/*  */
+.info-textbox {
+    margin-top: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 32px;
+
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+    color: var(--text-color);
+
+    text-align: justify;
+    text-justify: inter-word;
+
+    /* background-color: #017a2f; */
+}
+/*  */
+
+
+
+/* directory box */
+.directory-box {
+    margin-top: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+
+    /* background-color: #308C0E; */
+    /* min-height: 800px; */
+}
+
+
+.directory-items {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    min-height: 100px;
+
+    /* background-color: #097BD2; */
+    background-color: var(--base-color);
+}
+.directory-items:hover {
+    transform: translateY(-5px); /* moves it up slightly */
+    box-shadow: 0 4px 12px var(--box-shadow);
+}
+
+.directory-items-type {
+    min-width: 32px;
+    height: 100%;   /* same as parent */
+
+    /* background-color: #6A0DAD; */
+    background-color: var(--base-color);
+}
+.directory-items-type img {
+    width: 32px;
+    height: 32px;
+}
+
+#problem-name {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-heading);
+
+    /* colors and decorator */
+    /* TODO: change color or links */
+
+    background-color: var(--base-color);
+}
+
+/* only used for text "By" */
+.dev-name {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-body);
+    color: var(--text-color);
+}
+/* display dev name link */
+#dev-name {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-heading);
+    color: var(--color-blue);
+
+    /* colors and decorator */
+    /* TODO: change color or links */
+
+    /* background-color: white; */
+}
+
+/* for all */
+.directory-items-text {
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+    color: var(--text-color);
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+/*  */
+.dates-info {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+    color: var(--text-color);
+
+    /* background-color: #C21807; */
+}
+

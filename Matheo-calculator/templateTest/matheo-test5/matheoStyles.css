@@ -1,0 +1,539 @@
+/* Base font import (if needed) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+
+:root {
+    --color-red: #C21807;
+    --color-blue: #097BD2;
+    --color-green: #308C0E;     /* TODO: this color vs #008e26 */
+    --color-purple: #6A0DAD;
+    /* TODO: find a good orange color */
+    --color-grayLight: #D9D9D9;
+    --color-grayDark: #515151;  /* TODO: find a best dark gray */
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Body and text desing */
+    --base-color: white;
+    --text-color: black;
+
+    /* about buttons */
+    --toggle-color-base: var(--color-grayLight);
+    --toggle-text-color-off: black;
+    --toggle-text-color-on: white;
+
+
+    /* text fonts for easy building */
+    --font-primary: 'Open Sans', sans-serif;
+
+    /* Font sizes */
+    --fs-h1: 20px;
+    --fs-h2: 18px;
+    --fs-body: 16px;
+
+    /* Font weights */
+    --fw-bold: 700;
+    --fw-semibold: 600;
+    --fw-regular: 400;
+
+    /* Line heights */
+    --lh-heading: 1.3;
+    --lh-body: 1.5;
+
+
+    /* {
+  font-family: var(--font-primary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+} */
+}
+
+.darkmode {
+    --base-color: black;
+    --text-color: white;
+
+    --toggle-color-base: var(--color-grayDark);
+    --toggle-text-color-off: white;
+    --toggle-text-color-on: white;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    /* background-color: #ffffff; */
+    background: var(--base-color);
+    color: var(--text-color);
+}
+
+
+/* BANNER ZONE */
+.matheo-banner {
+    background-color: var(--color-red);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+.matheo-banner div {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.banner-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.2s ease;
+
+    /* delete <a> default values */
+    text-decoration: none;
+    color: inherit;
+}
+.banner-btn img {
+    display: block;
+}
+
+/* HOVER */
+.banner-btn:hover {
+    transform: scale(1.1);
+}
+.banner-center banner-btn:hover {     /* personalized hover for main button */
+    transform: translateY(-2px) scale(1.25);
+}
+
+
+/* set positions */
+.banner-left {
+    background-color: var(--color-red);
+    justify-content: flex-start;
+}
+.banner-center {
+    background-color: var(--color-red);
+    justify-content: center;
+}
+.banner-right {
+    background-color: var(--color-red);
+    justify-content: flex-end;
+}
+/* BANNER END */
+
+
+/* TITLE BANNER */
+.title-banner {
+    background-color: var(--color-red);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 5px; /* row-gap: 10px; doesn't work here */
+    /* add spacing in elemets */
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+
+    margin-top: 2px;    /* A small top marging */
+    margin-bottom: 5px;
+}
+
+.title-banner div {
+    display: flex;
+    align-items: center;   /* vertical alignment */
+    background: var(--color-red);
+    color: white;
+}
+
+#title-textBanner {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+.idk-btn {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* simple animation */
+    transition: transform 0.2s ease;
+}
+
+/* just in case */
+.idk-btn img {
+    display: block;
+}
+
+/* hover btn */
+.idk-btn:hover {
+    background-color: rgba(22, 21, 21, 0.08);   /* btn shadows (squared) */
+    box-shadow: 0 0 8px rgba(0,0,0,0.18);       /* idk what it does but i'll leave it */
+    transform: scale(1.25);                       /* make it bigger */
+}
+/* TITLE BANNER END */
+
+
+/* INPUT ZONE */
+#INPUT-ZONE {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px; /* Generally is 10px but i leave it as it is */
+
+    /* reserved visual space */
+    min-height: 160px;   /* reserve space initially */
+    /* background-color: var(--base-color); */
+    background-color: #308C0E;
+    color: var(--text-color);
+
+    /* 
+        TODO: check for size later
+        TODO: add horizontal layout automatically
+    */
+}
+/* INPUT ZONE END */
+
+
+/* CALCULATE BUTTON ZONE */
+.calculate-button {
+    background-color: #097BD2;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;    /* A bit bigger than title banner */
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 12px;
+    /* border: 2px solid #097BD2; */
+    box-shadow: 0 6px #999;
+    margin-bottom: 30px;    /* small sep, top separation was set in INPUT ZONE */
+}
+
+.calculate-button:active {
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+/* CALCULATE BUTTON END */
+
+
+/* TOGGLE OUTPUT BUTTON ZONE */
+/* hide radio buttons */
+input[type="radio"]{
+    display:none;
+}
+
+/* container */
+.toggle-output{
+    position:relative;
+    width:220px;
+    height:40px;
+    background:var(--toggle-color-base);  /* TODO: replace this with dark gray in dark mode? and so */
+    border-radius:10px;    /* outer radious */
+    display:flex;
+    overflow:hidden;
+    cursor:pointer;
+
+    margin-left: 10px;
+}
+
+/* sliding blue oval */
+.slider{
+    position:absolute;
+    top:3px;
+    left:3px;
+    width:104px;
+    height:34px;
+    background:var(--color-blue);
+    border-radius:10px;    /* inner radious */
+    transition:0.3s ease;
+    z-index:1;
+}
+
+/* labels */
+.toggle-output label{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    font-weight:bold;
+    z-index:2;
+    color:black;    /* idk what text color is this */
+    transition:0.3s ease;
+}
+
+/* active text colors */
+#show-result:checked ~ .toggle-output .label1{
+    color:var(--toggle-text-color-on);
+}
+#show-result:checked ~ .toggle-output .label2{
+    color:var(--toggle-text-color-off);
+}
+
+#show-operations:checked ~ .toggle-output .label1{
+    color:var(--toggle-text-color-off);
+}
+#show-operations:checked ~ .toggle-output .label2{
+    color:var(--toggle-text-color-on);
+}
+
+/* move slider */
+#show-operations:checked ~ .toggle-output .slider{
+    transform:translateX(110px);
+}
+/* TOGGLE OUTPUT BUTTON END */
+
+
+/* OUTPUT ZONE */
+#OUTPUT-ZONE {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    margin-left: 20px;  /* 20 or 30 */
+    margin-right: 10px;
+    /* no padding needed, only margin left */
+
+    /* reserved visual space */
+    min-height: 160px;   /* reserve space initially */
+    /* background-color: var(--base-color); */
+    background-color: #308C0E;
+
+    color: var(--text-color);
+
+    /* 
+        TODO: check for size later
+        TODO: add horizontal layout automatically
+    */
+}
+/* OUTPUT ZONE END */
+
+
+.centered-items {
+    display: grid;
+    place-items: center;
+
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    /* align-items: center;     Vertical centering */
+}
+
+
+
+
+
+
+
+
+
+
+/* HAM MENU ZONE */
+.ham-menu { /* new one */
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 240px;   /* keep on mind */
+    min-height: 100vh;
+    z-index: 9999;
+    background: var(--base-color);
+
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    /* Does this will be used */
+    /* grid-template-columns: auto 1fr auto; */
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+/* logic to display or hide ham menu */
+/* use JS to give or removc this property */
+.ham-menu.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+/* gradient */
+.ham-menu::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;   /* width of the gradient strip */
+    height: 100%;
+    background: linear-gradient(to right, rgb(33, 33, 33), transparent);
+    /* pointer-events: none; */
+}
+.ham-menu div {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.ham-menu button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* simple animation */
+    transition: transform 0.2s ease;
+    margin-bottom: 2px;     /* add a small one */
+}
+
+
+
+/* .ham-items span {
+    display: block;
+    margin-bottom: 8px;
+} */
+
+
+/* .ham-menu button img {
+    display: block;
+} */
+.button-return {
+    background-color: var(--color-red);
+    justify-content: flex-start;
+
+    min-width: 220px;   /* Extend red color to full margin */
+    margin-bottom: 2px;     /* hide white line */
+}
+.ham-menu .button-return button:hover {     /* personalized hover for main button */
+    transform: translateY(-2px) scale(1.15);
+}
+/* this is only to keep same height as matheo banner */
+
+
+/* hide radio buttons */
+input[type="radio"]{
+    display:none;
+}
+
+/* container */
+.toggle-theme{
+    position:relative;
+    width:220px;
+    height:40px;
+    background:var(--toggle-color-base);  /* TODO: replace this with dark gray in dark mode? and so */
+    border-radius:10px;    /* outer radious */
+    display:flex;
+    overflow:hidden;
+    cursor:pointer;
+
+    /* margin-left: 10px; */
+}
+
+/* sliding blue oval */
+.slider{
+    position:absolute;
+    top:3px;
+    left:3px;
+    width:104px;
+    height:34px;
+    background:var(--color-blue);
+    border-radius:10px;    /* inner radious */
+    transition:0.3s ease;
+    z-index:1;
+}
+
+/* labels */
+.toggle-theme label{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    font-weight:bold;
+    z-index:2;
+    color:black;    /* idk what text color is this */
+    transition:0.3s ease;
+}
+
+/* active text colors */
+#mode-light:checked ~ .toggle-theme .label1{
+    color:var(--toggle-text-color-on);
+}
+#mode-light:checked ~ .toggle-theme .label2{
+    color:var(--toggle-text-color-off);
+}
+
+#mode-dark:checked ~ .toggle-theme .label1{
+    color:var(--toggle-text-color-off);
+}
+#mode-dark:checked ~ .toggle-theme .label2{
+    color:var(--toggle-text-color-on);
+}
+
+/* move slider */
+#mode-dark:checked ~ .toggle-theme .slider{
+    transform:translateX(110px);
+}
+/* TOGGLE DARK MODE END */
+
+
+.ham-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;     /* just in case */
+}
+.ham-items > * {    /* Align left */
+    align-self: flex-start;
+}
+.ham-menu > div {   /* shared padding */
+    padding: 10px;
+}
+.ham-items span {   /* sep text to button */
+    margin-bottom: 6px;
+    
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body);
+    color: var(--text-color);
+}
+
+.ham-buttons {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-heading);
+    color: var(--text-color);
+    border-radius: 10px;
+    max-width: fit-content;
+
+
+    background-color: var(--toggle-color-base);
+    cursor: pointer;
+}
+

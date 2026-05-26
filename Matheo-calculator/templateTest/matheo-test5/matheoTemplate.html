@@ -1,0 +1,204 @@
+<!-- 
+  Matheo oficial template
+  18/04/2026
+
+  this is the backbone
+
+  changelog: 27/04/26
+    - Modified css to add a dark mode and font templates
+    - Modified to add a hamburger menu
+
+  changelog: 28/04/26
+    - Added hamburger menu
+    - added function to dark mode (separated file)
+    - idea of how to share dark mode across all structure
+    - adden close hamburger menu when you press outside of it while active
+
+    bug:
+        - when you are in dark mode and refresh, then select again light mode
+        the button doesn't work
+    fixe:
+        - fixed bug at the top
+
+  changelog: 01/05/2026
+    - New folder structure
+    - New logic for dark/light mode with structure
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheo Template</title>
+    <link rel="stylesheet" href="matheoStyles.css">
+
+    <!-- reuse this in every page -->
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+
+            if (saved === "dark") {
+                document.documentElement.classList.add("darkmode");
+            } else if (saved === "light") {
+                document.documentElement.classList.remove("darkmode");
+            } else {
+                // Optional: system preference fallback
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (prefersDark) {
+                    document.documentElement.classList.add("darkmode");
+                }
+            }
+        })();
+    </script>
+
+    <!-- utility, save this in main folder -->
+    <script type="text/javascript" src="/sharedResources/theme/theme.js" defer></script>
+</head>
+
+<body class="">
+    <div class="matheo-banner">
+        <div class="banner-left" id="hamOpen">
+            <button class="banner-btn" type="button" aria-label="see more options">
+                <img src="/sharedResources/resources/BUTTON-MENU.svg" alt="hamburger menu" width="40" height="40">
+            </button>
+        </div>
+
+        <div class="banner-center">
+            <a href="/main/index.html" class="banner-btn" aria-label="go to main page">
+                <img src="/sharedResources/resources/BUTTON-MAIN.svg" alt="go to main page" width="100" height="40">
+            </a>
+        </div>
+
+        <div class="banner-right">  <!-- change later with button logic instead of nav -->
+            <a href="/directory/directory.html" class="banner-btn" aria-label="search">
+                <img src="/sharedResources/resources/BUTTON-SEARCH.svg" alt="search" width="40" height="40">
+            </a>
+        </div>
+    </div>
+
+    
+    <div class="title-banner">
+        <div class="title-text">
+            <span id="title-textBanner">Dummy text here</span>
+        </div>
+
+        <div>
+            <button type="button" class="idk-btn" aria-label="see a resume of what it is for">    <!-- incert script here -->
+                <img src="/sharedResources/resources/BUTTON-IDK.svg" alt="show help box" width="16" height="16">
+            </button>
+        </div>
+    </div>
+
+
+    <div class="ham-menu" id="hamMenu">
+        <nav>
+            <!-- top banner -->
+            <div class="button-return" id="hamClose">
+                <button type="button" aria-label="hide hamburger menu">    <!-- incert script here -->
+                    <img src="/sharedResources/resources/BUTTON-RETURN.svg" alt="hide hamburger menu" width="40" height="40">
+                </button>
+            </div>
+            <div class="title-banner">  <!-- i only added this go get a small gap, idk how to define one normally yet xd -->
+                <div class="title-text">
+                    <span id="title-textBanner"></span>
+                </div>
+            </div>
+            
+            <!-- items of list -->
+            <ul class="ham-list">   <!-- for each -->
+                <li class="ham-items">
+                    <span id="ham-theme-text">Tema:</span>     <!-- For multilingua -->
+                    <!-- toggle theme (light/dark) -->
+                    <input type="radio" name="toggle-theme" id="mode-light" checked>
+                    <input type="radio" name="toggle-theme" id="mode-dark">
+    
+                    <div class="toggle-theme">
+                        <div class="slider"></div>
+        
+                        <label for="mode-light" class="label1">Claro</label>
+                        <label for="mode-dark" class="label2">Oscuro</label>
+                    </div>
+                </li>
+
+                <!-- Future menu items -->
+                <!--
+                <li class="ham-items">
+                    ...
+                </li>
+                -->
+
+                <!-- TODO: solve this acording to desing in Figma -->
+                <!-- <div class="ham-items">
+                    <span id="ham-language-text">Language:</span>
+
+                    <div class="ham-buttons">
+                        <span>this</span>
+
+                        <button type="button" aria-label="select language">English</button>
+                    </div>
+                </div>
+                
+                <div class="ham-items">
+                    <div class="ham-buttons">
+                        <span id="ham-about-text">About >></span>
+
+                        <button type="button" aria-label="select language"></button>
+                    </div>
+                </div> -->
+
+            </ul>
+        </nav>
+    </div>
+
+
+    <div id="INPUT-ZONE">
+        <!--
+            Fill here using javascript
+            Generaly, this zone would have the same height and padding.
+            You're free to add horizontal scrolling and more height if needed
+        -->
+        <p>Dummy text here</p>
+        <p>Fill it later</p>
+    </div>
+
+
+    <!-- calculate button -->
+    <div class="centered-items">
+        <button class="calculate-button" type="button" aria-label="calculate">Calcular</button>
+    </div>
+
+
+    <!-- toggle what type of output (result/operations) -->
+    <input type="radio" name="toggle-output" id="show-result" checked>
+    <input type="radio" name="toggle-output" id="show-operations">
+    
+    <div class="toggle-output">
+        <div class="slider"></div>
+        
+        <label for="show-result" class="label1">Resultado</label>
+        <label for="show-operations" class="label2">Operación</label>
+    </div>
+
+    
+    <!-- OUTPUT ZONE -->
+    <div id="OUTPUT-ZONE">
+        <!--
+            Fill here using javascript
+            This zones is a box with undefinez height
+            Feel free with this
+
+            This has two modes: Result & Operations
+
+            It has a defined padding left and right
+        -->
+        <p>Dummy text here</p>
+        <p>Fill later</p>
+    </div>
+
+    <p>This is an example text</p>
+
+
+    <script src="matheoScript.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio</title>
+    <link rel="stylesheet" href="matheoDirectory.css">
+
+    <!-- reuse this in every page -->
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+
+            if (saved === "dark") {
+                document.documentElement.classList.add("darkmode");
+            } else if (saved === "light") {
+                document.documentElement.classList.remove("darkmode");
+            } else {
+                // Optional: system preference fallback
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (prefersDark) {
+                    document.documentElement.classList.add("darkmode");
+                }
+            }
+        })();
+    </script>
+
+    <!-- utility, save this in main folder -->
+    <script type="text/javascript" src="/sharedResources/theme/theme.js" defer></script>
+</head>
+
+<body class="">
+    <div class="banner">
+        <div>
+            <button class="banner-btn" onclick="history.back()">
+                <img src="/sharedResources/resources/BUTTON-GOBACK.svg" alt="«" width="40" height="40">
+                <span class="banner-text">Directorio</span>
+            </button>
+        </div>
+    </div>
+    <div class="banner-box"></div>
+
+    <div class="info-textbox">
+        <!--  -->
+        <span>
+            Bienvenido al directorio, aquí encontrarás las entradas de Matheo que se han creadas hasta la fecha, se libre de explorar lo que <strong>Matheo Beta</strong> tiene que ofrecerte.
+        </span>
+    </div>
+
+    <!-- Transform it to js and cvs -->
+    <div class="directory-box">
+        <!-- Insert all items here -->
+        <div class="directory-items">
+            <!-- image -->
+            <div class="directory-items-type">
+                <img src="/sharedResources/resources/ICON-TYPE-OFFICIAL.svg">
+            </div>
+
+            <!-- text -->
+            <div class="directory-items-text">
+                <!-- info about what it is -->
+                <p>
+                    <a href="" id="problem-name">Dummy problem name</a>
+                    <span class="dev-name">By</span>
+                    <a href="" id="dev-name">Dummy dev name</a>
+                </p>
+                <!-- text about what it is -->
+                <p>
+                    <span id="problem-info">Sumar un número entero con una fracción y obtener una fracción o en su defecto, un número mixto.</span>
+                </p>
+                <!-- dates -->
+                <p class="dates-info">
+                    Created in <span id="created-date">00/00/0000</span>, Updated in <span id="updated-date">00/00/0000</span>
+                </p>
+                <!--  -->
+            </div>
+        </div>
+    </div>
+
+    <div class="directory-box">
+        <!-- Insert all items here -->
+        <div class="directory-items">
+            <!-- image -->
+            <div class="directory-items-type">
+                <img src="/sharedResources/resources/ICON-TYPE-OFFICIAL.svg">
+            </div>
+
+            <!-- text -->
+            <div class="directory-items-text">
+                <!-- info about what it is -->
+                <p>
+                    <a href="" id="problem-name">Dummy problem name</a>
+                    <span class="dev-name">By</span>
+                    <a href="" id="dev-name">Dummy dev name</a>
+                </p>
+                <!-- text about what it is -->
+                <p>
+                    <span id="problem-info">Sumar un número entero con una fracción y obtener una fracción o en su defecto, un número mixto.</span>
+                </p>
+                <!-- dates -->
+                <p class="dates-info">
+                    Created in <span id="created-date">00/00/0000</span>, Updated in <span id="updated-date">00/00/0000</span>
+                </p>
+                <!--  -->
+            </div>
+        </div>
+    </div>
+
+    <div class="directory-box">
+        <!-- Insert all items here -->
+        <div class="directory-items">
+            <!-- image -->
+            <div class="directory-items-type">
+                <img src="/sharedResources/resources/ICON-TYPE-OFFICIAL.svg">
+            </div>
+
+            <!-- text -->
+            <div class="directory-items-text">
+                <!-- info about what it is -->
+                <p>
+                    <a href="" id="problem-name">Dummy problem name</a>
+                    <span class="dev-name">By</span>
+                    <a href="" id="dev-name">Dummy dev name</a>
+                </p>
+                <!-- text about what it is -->
+                <p>
+                    <span id="problem-info">Sumar un número entero con una fracción y obtener una fracción o en su defecto, un número mixto.</span>
+                </p>
+                <!-- dates -->
+                <p class="dates-info">
+                    Created in <span id="created-date">00/00/0000</span>, Updated in <span id="updated-date">00/00/0000</span>
+                </p>
+                <!--  -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- <h1>Placeholder</h1> -->
+</body>
+</html>

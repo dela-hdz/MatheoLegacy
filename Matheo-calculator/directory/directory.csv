@@ -1,0 +1,3 @@
+id,problemName,devName,description,createdDate,updatedDate,type,link,devLink
+0,Sumar número con fracción,Matheo Team,"Sumar un número entero con una fracción y obtener una fracción o en su defecto, un número mixto.",01/05/26,01/05/26,official,/calculators/sumNumFrac/sumNumFrac.html,0
+1,Restar número con fracción,Matheo Team,"Restar un número entero con una fracción y obtener una fracción o en su defecto, un número mixto.",01/04/26,01/05/26,official,/calculators/subNumFrac/subNumFrac.html,0
